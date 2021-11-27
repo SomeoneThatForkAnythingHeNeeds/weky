@@ -150,7 +150,7 @@ module.exports = {
 	},
 	createButton: function(label, disabled, getRandomString) {
 		let style = 'SECONDARY';
-		if (label === 'AC' || label === 'DC' || label === '⌫') {
+		if (label === 'AC' || label === '✖' || label === '⌫') {
 			style = 'DANGER';
 		} else if (label === '=') {
 			style = 'SUCCESS';
@@ -163,7 +163,7 @@ module.exports = {
 			label === 'x' ||
 			label === '-' ||
 			label === '+' ||
-			label === '.'
+			label === '.' || label === '/'
 		) {
 			style = 'PRIMARY';
 		}
