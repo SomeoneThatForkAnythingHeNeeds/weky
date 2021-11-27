@@ -163,7 +163,6 @@ if(options.slash.command) options.message.editReply({
 
 			calc.on('collect', async (btn) => {
 				if (btn.user.id !== options.message.author.id) return;
-				})
 				await btn.deferUpdate();
 				if (btn.customId === 'calAC') {
 					str += ' ';
