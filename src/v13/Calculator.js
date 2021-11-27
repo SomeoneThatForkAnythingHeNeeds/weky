@@ -116,7 +116,7 @@ module.exports = async (options) => {
 		.setTitle(options.embed.title)
 		.setDescription(stringify)
 		.setColor(options.embed.color);
-if(options.slash.command) options.message.editReply({
+if(options.slash_command) options.message.editReply({
 			embeds: [embed],
 			components: row,
 		})
