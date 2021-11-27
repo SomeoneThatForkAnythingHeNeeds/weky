@@ -79,7 +79,7 @@ module.exports = async (options) => {
 		'7',
 		'8',
 		'9',
-		'÷',
+		'/',
 		'DC',
 		'4',
 		'5',
