@@ -115,6 +115,7 @@ module.exports = async (options) => {
 	const embed = new Discord.MessageEmbed()
 		.setTitle(options.embed.title)
 		.setDescription(stringify)
+                .setThumbnail(options.embed.thumbnail)
 		.setColor(options.embed.color);
 if(options.slash_command) options.message.editReply({
 			embeds: [embed],
@@ -129,6 +130,7 @@ if(options.slash_command) options.message.editReply({
 				const _embed = new Discord.MessageEmbed()
 					.setTitle(options.embed.title)
 					.setDescription(stringify)
+                                        .setThumbnail(options.embed.thumbnail)
 					.setColor(options.embed.color);
 				msg.edit({
 					embeds: [_embed],
@@ -140,7 +142,8 @@ if(options.slash_command) options.message.editReply({
 				const _embed = new Discord.MessageEmbed()
 					.setTitle(options.embed.title)
 					.setColor(options.embed.color)
-					.setDescription(stringify);
+					.setDescription(stringify)
+                                        .setThumbnail(options.embed.thumbnail);
 				for (let i = 0; i < text.length; i++) {
 					if (buttons[cur].length === 5) cur++;
 					buttons[cur].push(
