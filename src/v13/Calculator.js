@@ -114,11 +114,7 @@ module.exports = async (options) => {
 	const embed = new Discord.MessageEmbed()
 		.setTitle(options.embed.title)
 		.setDescription(stringify)
-		.setColor(options.embed.color)
-		.setFooter(options.embed.footer);
-	if (options.embed.timestamp) {
-		embed.setTimestamp();
-	}
+		.setColor(options.embed.color);
 
 	options.message
 		.reply({
@@ -130,11 +126,7 @@ module.exports = async (options) => {
 				const _embed = new Discord.MessageEmbed()
 					.setTitle(options.embed.title)
 					.setDescription(stringify)
-					.setColor(options.embed.color)
-					.setFooter(options.embed.footer);
-				if (options.embed.timestamp) {
-					_embed.setTimestamp();
-				}
+					.setColor(options.embed.color);
 				msg.edit({
 					embeds: [_embed],
 					components: row,
@@ -171,15 +163,8 @@ module.exports = async (options) => {
 			});
 
 			calc.on('collect', async (btn) => {
-				if (btn.user.id !== options.message.author.id) {
-					return btn.reply({
-						content: options.othersMessage.replace(
-							'{{author}}',
-							options.message.author.id,
-						),
-						ephemeral: true,
-					});
-				}
+				if (btn.user.id !== options.message.author.id) return;
+				})
 				await btn.deferUpdate();
 				if (btn.customId === 'calAC') {
 					str += ' ';
