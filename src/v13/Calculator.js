@@ -80,7 +80,7 @@ module.exports = async (options) => {
 		'8',
 		'9',
 		'/',
-		'╳',
+		'✖',
 		'4',
 		'5',
 		'6',
