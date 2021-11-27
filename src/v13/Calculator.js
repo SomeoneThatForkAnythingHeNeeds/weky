@@ -110,6 +110,11 @@ module.exports = async (options) => {
 			for (const btn of button) row.push(functions.addRow(btn));
 		}
 	}
+       if (this.options.slash_command) this.message.author = this.message.user;
+       async sendMessage(content) {
+		if (this.options.slash_command) return await this.message.editReply(content)
+		return await this.message.reply(content)
+	}
 
 	const embed = new Discord.MessageEmbed()
 		.setTitle(options.embed.title)
@@ -117,7 +122,7 @@ module.exports = async (options) => {
 		.setColor(options.embed.color);
 
 	options.message
-		.reply({
+		.sendMessage({
 			embeds: [embed],
 			components: row,
 		})
@@ -137,11 +142,7 @@ module.exports = async (options) => {
 				const _embed = new Discord.MessageEmbed()
 					.setTitle(options.embed.title)
 					.setColor(options.embed.color)
-					.setDescription(stringify)
-					.setFooter(options.embed.footer);
-				if (options.embed.timestamp) {
-					_embed.setTimestamp();
-				}
+					.setDescription(stringify);
 				for (let i = 0; i < text.length; i++) {
 					if (buttons[cur].length === 5) cur++;
 					buttons[cur].push(
