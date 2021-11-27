@@ -110,19 +110,17 @@ module.exports = async (options) => {
 			for (const btn of button) row.push(functions.addRow(btn));
 		}
 	}
-       if (this.options.slash_command) this.message.author = this.message.user;
-       async sendMessage(content) {
-		if (this.options.slash_command) return await this.message.editReply(content)
-		return await this.message.reply(content)
-	}
+       if (options.slash_command) options.message.author = options.message.user;
 
 	const embed = new Discord.MessageEmbed()
 		.setTitle(options.embed.title)
 		.setDescription(stringify)
 		.setColor(options.embed.color);
-
-	options.message
-		.sendMessage({
+if(options.slash.command) options.message.editReply({
+			embeds: [embed],
+			components: row,
+		})
+	if(!options.slash_command) options.message.reply({
 			embeds: [embed],
 			components: row,
 		})
