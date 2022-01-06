@@ -1,5 +1,5 @@
+/*
 const data = new Set();
-const db = require('quick.db');
 const currentGames = new Object();
 const Discord = require('discord.js');
 const functions = require('../../functions/function');
@@ -500,3 +500,4 @@ module.exports = async (options) => {
 		});
 	}
 };
+*/
