@@ -1,6 +1,5 @@
 /*
 const data = new Set();
-const db = require('quick.db');
 const Discord = require('discord.js');
 const functions = require('../../functions/function');
 
