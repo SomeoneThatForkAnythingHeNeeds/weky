@@ -1,5 +1,5 @@
+/*
 const data = new Set();
-const db = require('quick.db');
 const fetch = require('node-fetch');
 const Discord = require('discord.js');
 const { decode } = require('html-entities');
@@ -525,3 +525,4 @@ module.exports = async (options) => {
 		}
 	});
 };
+*/
