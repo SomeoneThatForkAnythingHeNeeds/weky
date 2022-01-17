@@ -207,7 +207,7 @@ if(options.slash_command) options.message.editReply({
 							stringify = '```\n' + str + '\n```';
 						}
 					}
-				} else if (btn.customId === 'calDC') {
+				} else if (btn.customId === 'cal✖') {
 					str = options.disabledQuery;
 					stringify = '```\n' + str + '\n```';
 					edit();
